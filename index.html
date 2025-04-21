@@ -1,0 +1,117 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SureShot by Titan</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+    }body, html {
+  height: 100%;
+  overflow: hidden;
+}
+
+.bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.content {
+  color: white;
+  text-align: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.6);
+  height: 100vh;
+  overflow-y: auto;
+}
+
+h1 {
+  font-size: 2em;
+  color: yellow;
+  margin: 20px 0 10px;
+}
+
+.telegram-button {
+  background-color: #ffc107;
+  color: black;
+  padding: 15px 30px;
+  margin: 20px auto;
+  display: inline-block;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 10px;
+  text-decoration: none;
+}
+
+.description, .recovery-text {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.profit-users {
+  font-size: 16px;
+  margin: 20px 0;
+}
+
+.timer {
+  font-size: 40px;
+  background: black;
+  color: white;
+  width: 100px;
+  height: 100px;
+  margin: 20px auto;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.highlight {
+  color: #ffeb3b;
+  font-weight: bold;
+}
+
+  </style>
+</head>
+<body>
+  <video class="bg-video" autoplay muted loop>
+    <source src="modx.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>  <div class="content">
+    <p>India's Most Popular Color Trading Tipper, Join Our Official Telegram Channel and Earn Unlimited Money with Sure shot by Titan...</p>
+    <h1>
+      <span class="highlight">SURESHOT BY TITAN</span>
+    </h1>
+    <img src="https://via.placeholder.com/250x250.png?text=Titan+Maxx" alt="Titan Maxx" style="border-radius: 20px; margin: 20px 0;" />
+    <a href="#" class="telegram-button">JOIN OUR TELEGRAM</a>
+    <p class="description">⚡Join karo, mere sath <span class="highlight">30,000</span> tak ka profit kamao, 99% accurate tips ke saath! 📈💪</p>
+    <p class="recovery-text">RECOVER ALL YOUR LOSSES<br>NOW EARN 3-4K DAILY 💰</p>
+    <p class="profit-users">💸 50+ Users Daily Profit With Me 💸</p>
+    <div class="timer" id="timer">
+      <div id="countdown">60</div>
+      <small>Seconds</small>
+    </div>
+    <h2>!! HURRY UP !!</h2>
+  </div>  <script>
+    let timeLeft = 60;
+    const countdownEl = document.getElementById('countdown');
+
+    const timer = setInterval(() => {
+      timeLeft--;
+      countdownEl.innerText = timeLeft < 10 ? '0' + timeLeft : timeLeft;
+      if (timeLeft <= 0) {
+        clearInterval(timer);
+        countdownEl.innerText = "00";
+      }
+    }, 1000);
+  </script></body>
+</html>
