@@ -40,7 +40,7 @@
     }
 
     h1 {
-      font-size: 2em;
+      font-size: 2.5em;
       margin: 20px 0 10px;
       text-shadow: 2px 2px 5px #000;
     }
@@ -69,7 +69,7 @@
     }
 
     .telegram-button {
-      background: linear-gradient(135deg, #FFD700, #FF8C00);
+      background: linear-gradient(135deg, #00f2fe, #4facfe);
       color: #000;
       padding: 15px 35px;
       margin: 20px auto;
@@ -77,8 +77,8 @@
       font-weight: bold;
       border-radius: 15px;
       text-decoration: none;
-      border: 3px solid #fff176;
-      box-shadow: 0 6px 15px rgba(255, 193, 7, 0.6), 0 0 20px rgba(255, 255, 0, 0.5);
+      border: 3px solid #4facfe;
+      box-shadow: 0 6px 15px rgba(0, 242, 254, 0.6), 0 0 20px rgba(79, 172, 254, 0.5);
       transition: all 0.3s ease-in-out;
       animation: shake 2s infinite;
     }
@@ -95,10 +95,11 @@
       80% { transform: translateX(3px); }
     }
 
-    .description, .recovery-text {
-      font-size: 18px;
+    .description {
+      font-size: 20px;
       margin: 10px 0;
       text-shadow: 1px 1px 2px #000;
+      line-height: 1.6;
     }
 
     .profit-users {
@@ -107,24 +108,20 @@
     }
 
     .timer {
-      font-size: 50px;
-      background: linear-gradient(45deg, #ff0000, #ff7300);
+      font-size: 40px;
+      background: black;
       color: white;
-      width: 150px;
-      height: 150px;
+      width: 100px;
+      height: 100px;
       margin: 20px auto;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       flex-direction: column;
-      box-shadow: 0 0 20px rgba(255, 0, 0, 0.7), 0 0 30px rgba(255, 115, 0, 0.7);
-      animation: pulse 1s ease-in-out infinite;
-    }
-
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); opacity: 1; }
-      50% { transform: scale(1.1); opacity: 0.8; }
+      box-shadow: 0 0 20px 5px #00f2fe, inset 0 0 15px 2px #4facfe;
+      border: 2px solid #00e5ff;
+      font-weight: bold;
     }
 
     .highlight {
@@ -146,16 +143,6 @@
       color: #ffeb3b;
       text-shadow: 1px 1px 3px #000;
     }
-
-    .flashing {
-      animation: flash 1s linear infinite;
-    }
-
-    @keyframes flash {
-      0% { color: #ff0000; }
-      50% { color: #fff; }
-      100% { color: #ff0000; }
-    }
   </style>
 </head>
 <body>
@@ -163,10 +150,8 @@
     <source src="modx.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
-  <div class="content">
-    <p>India's Most Popular Color Trading Tipper, Join Our Official Telegram Channel and Earn Unlimited Money with Sure shot by Surya Army...</p>
 
-    <!-- Updated heading: SURYA ARMY -->
+  <div class="content">
     <h1 class="rainbow">
       <span>S</span><span>U</span><span>R</span><span>Y</span><span>A</span>
       <span> </span><span>A</span><span>R</span><span>M</span><span>Y</span>
@@ -174,15 +159,21 @@
 
     <img src="https://i.ibb.co/Mkc48jyt/IMG-20250421-170419-605.jpg" alt="Surya Army Main"/>
 
-    <a href="#" class="telegram-button">JOIN OUR TELEGRAM</a>
+    <p class="description">
+      ⚡ India's No.1 Color Signal Provider – Join <span class="highlight">SURYA ARMY</span> and start earning with 99% winning accuracy!  
+      <br><br>
+      Daily ₹5K+ profit | Trusted by 10,000+ Traders | Real-Time Sureshot Tips
+    </p>
 
-    <p class="description">⚡Join karo, mere sath <span class="highlight">30,000</span> tak ka profit kamao, 99% accurate tips ke saath! 📈💪</p>
-    <p class="recovery-text">RECOVER ALL YOUR LOSSES<br>NOW EARN 3-4K DAILY 💰</p>
+    <a href="https://t.me/+bVFjVNChfnQxNDY1" class="telegram-button" target="_blank">
+      JOIN WITH SURYA ARMY
+    </a>
+
     <p class="profit-users">💸 50+ Users Daily Profit With Me 💸</p>
 
     <div class="timer" id="timer">
       <div id="countdown">60</div>
-      <small>Seconds</small>
+      <small>Sec</small>
     </div>
 
     <h2 class="rainbow"><span>!</span><span>!</span> <span>H</span><span>U</span><span>R</span><span>R</span><span>Y</span> <span>U</span><span>P</span> <span>!</span><span>!</span></h2>
@@ -192,29 +183,27 @@
     let timeLeft = 60;
     const countdownEl = document.getElementById('countdown');
 
-    const startTimer = () => {
-      timeLeft = 60; // Reset timer to 60 seconds
+    function restartTimer() {
+      timeLeft = 60;
       countdownEl.innerText = timeLeft;
-
-      const timer = setInterval(() => {
+      timer = setInterval(() => {
         timeLeft--;
         countdownEl.innerText = timeLeft < 10 ? '0' + timeLeft : timeLeft;
-
-        if (timeLeft <= 10) {
-          countdownEl.classList.add("flashing"); // Add flashing effect when under 10 seconds
-        } else {
-          countdownEl.classList.remove("flashing"); // Remove flashing effect when above 10 seconds
-        }
-
         if (timeLeft <= 0) {
           clearInterval(timer);
-          countdownEl.innerText = "00";
-          setTimeout(startTimer, 1000); // Restart timer after 1 second
+          restartTimer();
         }
       }, 1000);
-    };
+    }
 
-    startTimer(); // Start the timer immediately
+    let timer = setInterval(() => {
+      timeLeft--;
+      countdownEl.innerText = timeLeft < 10 ? '0' + timeLeft : timeLeft;
+      if (timeLeft <= 0) {
+        clearInterval(timer);
+        restartTimer();
+      }
+    }, 1000);
   </script>
 </body>
 </html>
